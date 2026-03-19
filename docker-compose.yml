@@ -1,7 +1,9 @@
 services:
   portfolio:
-    build: .
-    container_name: asel-portfolio
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: asel-portfolio-v2
     ports:
-      - "8081:80"
+      - "8082:80"
     restart: unless-stopped
