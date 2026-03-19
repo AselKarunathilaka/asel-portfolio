@@ -3,143 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Asel Karunathilaka | Cloud, DevOps & IT Portfolio</title>
   <meta
     name="description"
-    content="Personal portfolio of Asel Karunathilaka, a final-year IT undergraduate focused on cloud computing, DevOps, deployment, web systems, and practical software projects."
+    content="Portfolio of Asel Karunathilaka - final-year IT undergraduate focused on Cloud, DevOps, Linux, Docker, and practical systems."
   />
-  <meta
-    name="keywords"
-    content="Asel Karunathilaka, portfolio, cloud computing, DevOps, Docker, Nginx, AWS, Azure, web development, SLIIT"
-  />
-  <meta name="author" content="Asel Karunathilaka" />
-
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="site-bg">
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-    <span class="orb orb-3"></span>
-    <span class="grid-overlay"></span>
-  </div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
 
   <header class="header">
     <nav class="nav container">
       <a href="#home" class="logo">Asel<span>Portfolio</span></a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
         ☰
       </button>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#devops">Cloud & DevOps</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#cloud-devops" class="nav-link">Cloud & DevOps</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
 
-      <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
-        Toggle Theme
-      </button>
+      <button class="theme-btn" id="themeToggle">Toggle Theme</button>
     </nav>
   </header>
 
   <main>
-    <section id="home" class="hero">
+    <section id="home" class="hero section">
       <div class="container hero-grid">
-        <div class="hero-text fade-in">
-          <p class="eyebrow">Cloud • DevOps • Web • AI</p>
+        <div class="hero-content fade-in">
+          <p class="section-tag">Cloud • DevOps • Deployment • Growth</p>
           <h1>Asel Karunathilaka</h1>
-          <h2>Final-Year IT Undergraduate building practical systems with a Cloud & DevOps mindset</h2>
+          <h2>
+            Final-Year IT Undergraduate building practical systems with a
+            Cloud & DevOps mindset
+          </h2>
 
-          <p class="hero-description">
-            I am a final-year B.Sc. (Hons) Information Technology undergraduate at SLIIT,
-            with a strong interest in cloud computing, DevOps, deployment workflows,
-            scalable web applications, and practical system building.
+          <p>
+            I am a final-year B.Sc. (Hons) Information Technology undergraduate
+            at SLIIT, with a strong interest in cloud computing, DevOps,
+            deployment workflows, scalable web applications, and practical
+            system building.
           </p>
 
-          <p class="hero-description secondary-text">
-            My main focus is Cloud and DevOps, while also growing in software development,
-            databases, machine learning, and information security. I enjoy turning ideas
-            into working projects and learning how software is built, shipped, and improved.
+          <p>
+            My main focus is Cloud and DevOps, while also growing in software
+            development, databases, machine learning, and information security.
+            I enjoy turning ideas into working projects and learning how
+            software is built, shipped, and improved.
           </p>
 
-          <div class="hero-buttons">
+          <div class="hero-actions">
             <a href="#projects" class="btn primary">Explore Projects</a>
             <a href="#contact" class="btn secondary">Contact Me</a>
           </div>
-
-          <div class="quick-stats">
-            <div class="stat-card">
-              <span class="stat-label">Primary Focus</span>
-              <h3>Cloud & DevOps</h3>
-              <p>AWS, Azure, Docker, Nginx, Linux, GitHub workflows</p>
-            </div>
-
-            <div class="stat-card">
-              <span class="stat-label">Supporting Skills</span>
-              <h3>Development</h3>
-              <p>JavaScript, Python, Java, HTML, CSS, full-stack fundamentals</p>
-            </div>
-
-            <div class="stat-card">
-              <span class="stat-label">Growth Areas</span>
-              <h3>AI & Security</h3>
-              <p>Machine learning, data evaluation, COBIT, OCTAVE, assurance concepts</p>
-            </div>
-          </div>
         </div>
 
-        <div class="hero-visual fade-in delay-1">
+        <div class="hero-side fade-in delay-1">
           <div class="profile-card">
-            <div class="profile-image-wrap">
+            <div class="profile-image-frame">
               <img
+                id="profileImage"
+                class="profile-image"
                 src="assets/profile.jpg"
                 alt="Portrait of Asel Karunathilaka"
-                class="profile-image"
-                id="profileImage"
               />
-              <div class="profile-fallback" id="profileFallback">
-                <span>AK</span>
-              </div>
+              <div class="profile-fallback" id="profileFallback">AK</div>
             </div>
 
-            <div class="profile-content">
-              <p class="profile-kicker">Current Direction</p>
+            <div class="profile-card-body">
+              <p class="mini-label">Current Direction</p>
               <h3>Building a strong base in modern infrastructure and practical delivery</h3>
-
               <ul class="focus-list">
                 <li>Containerized deployment with Docker</li>
-                <li>Static hosting with Nginx</li>
-                <li>GitHub-based project workflows</li>
-                <li>Cloud learning with AWS & Azure</li>
-                <li>Front-end and system-focused portfolio projects</li>
+                <li>Linux server practice and web hosting</li>
+                <li>Git and GitHub based project workflow</li>
+                <li>Cloud and DevOps learning through projects</li>
               </ul>
-
-              <div class="profile-links">
-                <a
-                  href="https://github.com/AselKarunathilaka"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="mini-link"
-                >
-                  GitHub
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/asel-karunathilaka"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="mini-link"
-                >
-                  LinkedIn
-                </a>
-              </div>
             </div>
           </div>
         </div>
@@ -149,37 +99,28 @@
     <section id="about" class="section">
       <div class="container">
         <div class="section-heading fade-in">
-          <p class="section-tag">About Me</p>
-          <h2>A personal portfolio with Cloud & DevOps at the center</h2>
+          <p class="section-tag">About</p>
+          <h2>Who I Am</h2>
         </div>
 
         <div class="about-grid">
-          <article class="about-card fade-in">
-            <h3>Who I Am</h3>
+          <div class="glass-card fade-in">
+            <h3>Profile</h3>
             <p>
-              I am a final-year Information Technology undergraduate with a strong interest
-              in cloud computing, DevOps practices, and real-world deployment workflows.
-              I enjoy learning by building complete systems rather than only studying theory.
+              I am a learner who prefers practical understanding over only theory.
+              I like exploring how software moves from local development into
+              real deployment, especially using Linux, Docker, and structured workflows.
             </p>
-            <p>
-              My work usually starts from the application itself, then moves into packaging,
-              hosting, deployment, and refinement. That is why I like projects that combine
-              software development with practical delivery.
-            </p>
-          </article>
+          </div>
 
-          <article class="about-card fade-in delay-1">
-            <h3>What This Portfolio Represents</h3>
+          <div class="glass-card fade-in delay-1">
+            <h3>Mindset</h3>
             <p>
-              This site is meant to showcase me more fully as a student and builder. It highlights
-              Cloud and DevOps first, while also showing my development work, machine learning exposure,
-              database experience, and academic foundation.
+              I am interested in the connection between building software and
+              operating software. That is why Cloud, DevOps, deployment,
+              automation, and infrastructure excite me.
             </p>
-            <p>
-              It is both a personal website and a practical learning project that reflects how I think
-              about software: build it well, deploy it properly, and keep improving it step by step.
-            </p>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -188,44 +129,38 @@
       <div class="container">
         <div class="section-heading fade-in">
           <p class="section-tag">Skills</p>
-          <h2>Technical foundation</h2>
+          <h2>Technical Areas</h2>
         </div>
 
-        <div class="skills-grid">
-          <article class="skill-box fade-in">
-            <span class="skill-tag">Priority</span>
-            <h3>Cloud & DevOps</h3>
-            <p>AWS, Azure, Docker, Nginx, Git, GitHub, Linux hosting basics, deployment workflows</p>
-          </article>
-
-          <article class="skill-box fade-in delay-1">
-            <span class="skill-tag">Development</span>
+        <div class="cards-grid">
+          <article class="glass-card fade-in">
             <h3>Programming & Web</h3>
-            <p>JavaScript, Python, Java, C++, HTML, CSS, responsive UI design, front-end application building</p>
+            <p>Java, Python, C++, HTML, CSS, JavaScript, full-stack fundamentals</p>
           </article>
 
-          <article class="skill-box fade-in delay-2">
-            <span class="skill-tag">Data</span>
+          <article class="glass-card fade-in delay-1">
+            <h3>Cloud</h3>
+            <p>AWS fundamentals, Azure fundamentals, cloud concepts and deployment interest</p>
+          </article>
+
+          <article class="glass-card fade-in delay-2">
+            <h3>DevOps & Tools</h3>
+            <p>Docker, Git, GitHub, Linux basics, Nginx, containerized workflow</p>
+          </article>
+
+          <article class="glass-card fade-in">
             <h3>Databases</h3>
-            <p>MongoDB, PostgreSQL, MySQL, Firebase/Firestore exposure through application work</p>
+            <p>MongoDB, PostgreSQL, MySQL</p>
           </article>
 
-          <article class="skill-box fade-in">
-            <span class="skill-tag">Infrastructure</span>
+          <article class="glass-card fade-in delay-1">
             <h3>Virtualization</h3>
-            <p>VMware Workstation Pro, virtual machines, Linux environments, practical server experimentation</p>
+            <p>VirtualBox, VMware, Ubuntu VM practice, server simulation</p>
           </article>
 
-          <article class="skill-box fade-in delay-1">
-            <span class="skill-tag">Learning Area</span>
-            <h3>Machine Learning</h3>
-            <p>Model evaluation, Jupyter notebooks, beginner ML workflows, practical experimentation with datasets</p>
-          </article>
-
-          <article class="skill-box fade-in delay-2">
-            <span class="skill-tag">Governance</span>
-            <h3>Security & Assurance</h3>
-            <p>COBIT, OCTAVE Allegro, information assurance, governance awareness, structured risk thinking</p>
+          <article class="glass-card fade-in delay-2">
+            <h3>Security & Governance</h3>
+            <p>COBIT, OCTAVE Allegro, Information Assurance concepts</p>
           </article>
         </div>
       </div>
@@ -234,167 +169,68 @@
     <section id="projects" class="section">
       <div class="container">
         <div class="section-heading fade-in">
-          <p class="section-tag">Featured Projects</p>
-          <h2>Selected work from my GitHub</h2>
+          <p class="section-tag">Projects</p>
+          <h2>What I Am Building</h2>
         </div>
 
-        <div class="projects-grid">
-          <article class="project-card featured fade-in">
-            <div class="project-top">
-              <span class="project-badge">Featured</span>
-              <span class="project-type">Full-Stack App</span>
-            </div>
-            <h3>SwiftBus Booking System</h3>
+        <div class="cards-grid">
+          <article class="project-card fade-in">
+            <h3>Linux Server Hosted Website</h3>
             <p>
-              A bus booking and management system designed to handle reservations, seat visibility,
-              admin-side operations, and a cleaner user experience for transport-related workflows.
+              Practiced deploying a website using Ubuntu Linux inside VirtualBox,
+              Docker, and Nginx. This helped me understand networking, remote access,
+              and containerized hosting.
             </p>
-            <ul class="project-points">
-              <li>Shows system design thinking and application flow</li>
-              <li>Good example of a larger practical project</li>
-              <li>Strong portfolio piece for web and solution building</li>
-            </ul>
-            <a
-              href="https://github.com/AselKarunathilaka/swiftbus-booking-system"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-link"
-            >
-              View Project Repository
-            </a>
           </article>
 
           <article class="project-card fade-in delay-1">
-            <div class="project-top">
-              <span class="project-badge">Cloud-Aware</span>
-              <span class="project-type">Web App</span>
-            </div>
-            <h3>City Weather Guide</h3>
+            <h3>Personal DevOps Portfolio</h3>
             <p>
-              A weather-focused web application that presents useful city-based information through
-              a clean interface while also reflecting deployment and delivery thinking.
+              Built this modern portfolio site with HTML, CSS, and JavaScript,
+              then packaged it with Docker and served it through Nginx.
             </p>
-            <ul class="project-points">
-              <li>Front-end development with API-driven thinking</li>
-              <li>Good fit for showcasing polished UI work</li>
-              <li>Supports your web + DevOps learning story</li>
-            </ul>
-            <a
-              href="https://github.com/AselKarunathilaka/city-weather-guide"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-link"
-            >
-              View Project Repository
-            </a>
           </article>
 
           <article class="project-card fade-in delay-2">
-            <div class="project-top">
-              <span class="project-badge">ML</span>
-              <span class="project-type">Data Project</span>
-            </div>
-            <h3>ML Heart Disease</h3>
+            <h3>Future Direction</h3>
             <p>
-              A machine learning project exploring prediction workflows and model-based analysis,
-              showing that my portfolio extends beyond web projects into data and AI-related work.
+              I want to continue into CI/CD pipelines, better cloud deployment,
+              automation, and more complete software delivery workflows.
             </p>
-            <ul class="project-points">
-              <li>Demonstrates exposure to ML experimentation</li>
-              <li>Useful supporting project for your broader profile</li>
-              <li>Shows analytical and technical curiosity</li>
-            </ul>
-            <a
-              href="https://github.com/AselKarunathilaka/ml-heart-disease"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-link"
-            >
-              View Project Repository
-            </a>
-          </article>
-
-          <article class="project-card fade-in">
-            <div class="project-top">
-              <span class="project-badge">Utility</span>
-              <span class="project-type">Browser Extension</span>
-            </div>
-            <h3>Leads Tracker Chrome Extension</h3>
-            <p>
-              A focused browser-based utility project that demonstrates practical JavaScript work,
-              useful interaction design, and lightweight product-style development.
-            </p>
-            <ul class="project-points">
-              <li>Shows small-tool product thinking</li>
-              <li>Useful for demonstrating JavaScript fundamentals</li>
-              <li>Adds variety to the portfolio project mix</li>
-            </ul>
-            <a
-              href="https://github.com/AselKarunathilaka/leads-tracker-chrome-extension"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-link"
-            >
-              View Project Repository
-            </a>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="devops" class="section alt-section">
+    <section id="cloud-devops" class="section alt-section">
       <div class="container">
         <div class="section-heading fade-in">
           <p class="section-tag">Cloud & DevOps</p>
-          <h2>How this portfolio reflects my main focus</h2>
+          <h2>Why This Area Interests Me</h2>
         </div>
 
-        <div class="devops-grid">
-          <article class="devops-card fade-in">
-            <h3>Version Control</h3>
+        <div class="cards-grid">
+          <article class="glass-card fade-in">
+            <h3>Cloud Thinking</h3>
             <p>
-              Git and GitHub help track changes, organize progress, and maintain a cleaner workflow
-              when improving and deploying projects.
+              I am interested in how applications are deployed, accessed, scaled,
+              and managed beyond just local development.
             </p>
           </article>
 
-          <article class="devops-card fade-in delay-1">
-            <h3>Containerization</h3>
+          <article class="glass-card fade-in delay-1">
+            <h3>DevOps Learning</h3>
             <p>
-              Docker packages the portfolio into a consistent environment so it can run the same way
-              across different machines more reliably.
+              I am learning how version control, Docker, web servers, deployment,
+              and maintenance fit together in real projects.
             </p>
           </article>
 
-          <article class="devops-card fade-in delay-2">
-            <h3>Web Serving</h3>
+          <article class="glass-card fade-in delay-2">
+            <h3>Practical Delivery</h3>
             <p>
-              Nginx serves the portfolio as a static site efficiently, which is a common and practical
-              way to host lightweight front-end applications.
-            </p>
-          </article>
-
-          <article class="devops-card fade-in">
-            <h3>Deployment Thinking</h3>
-            <p>
-              This project is not only about design. It also reflects how code moves from development
-              into a hosted, testable, and repeatable form.
-            </p>
-          </article>
-
-          <article class="devops-card fade-in delay-1">
-            <h3>Cloud Direction</h3>
-            <p>
-              My long-term goal is to deepen my understanding of cloud platforms, infrastructure,
-              automation, deployment pipelines, and production-ready application delivery.
-            </p>
-          </article>
-
-          <article class="devops-card fade-in delay-2">
-            <h3>Continuous Improvement</h3>
-            <p>
-              A good DevOps mindset is about improving systems continuously, reducing friction,
-              and making software easier to build, deploy, maintain, and evolve.
+              My focus is not only writing code, but also understanding how to
+              package, run, update, and troubleshoot software properly.
             </p>
           </article>
         </div>
@@ -405,7 +241,7 @@
       <div class="container">
         <div class="section-heading fade-in">
           <p class="section-tag">Education</p>
-          <h2>Academic journey</h2>
+          <h2>Academic Background</h2>
         </div>
 
         <div class="timeline">
@@ -413,10 +249,10 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <h3>Sri Lanka Institute of Information Technology (SLIIT)</h3>
-              <p class="timeline-subtitle">B.Sc. (Hons) in Information Technology | 2021 - Present</p>
+              <p class="timeline-subtitle">B.Sc. (Hons) in Information Technology</p>
               <p>
-                Final-year undergraduate with learning exposure to cloud computing, machine learning,
-                information assurance, networking, project work, and software development.
+                Final-year undergraduate focused on practical system building,
+                cloud learning, machine learning, information security, and deployment practice.
               </p>
             </div>
           </div>
@@ -424,112 +260,51 @@
           <div class="timeline-item fade-in delay-1">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <h3>St. Nicholas’ International College, Negombo</h3>
-              <p class="timeline-subtitle">Cambridge IGCSE A/L | 2018 - 2020</p>
-              <p>Built a strong foundation before progressing into higher studies in Information Technology.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item fade-in delay-2">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Negombo South International School, Negombo</h3>
-              <p class="timeline-subtitle">Edexcel IGCSE O/L | 2007 - 2018</p>
-              <p>Early academic background that supported my growth into technical learning and project work.</p>
+              <h3>Previous Education</h3>
+              <p class="timeline-subtitle">IGCSE and Advanced Level Background</p>
+              <p>
+                Academic foundation that supported my transition into higher studies in IT.
+              </p>
             </div>
           </div>
         </div>
-
-        <article class="coursework-card fade-in">
-          <h3>Relevant Coursework</h3>
-          <div class="course-list">
-            <span>Cloud Computing</span>
-            <span>Machine Learning</span>
-            <span>Information Assurance & Security</span>
-            <span>Network Design and Management</span>
-            <span>Data Structures & Algorithms</span>
-            <span>IT Project Management</span>
-            <span>Business Management for IT</span>
-          </div>
-        </article>
       </div>
     </section>
 
-    <section id="contact" class="section alt-section">
+    <section id="contact" class="section">
       <div class="container">
         <div class="section-heading fade-in">
           <p class="section-tag">Contact</p>
-          <h2>Let’s connect</h2>
+          <h2>Let’s Connect</h2>
         </div>
 
-        <div class="contact-layout">
-          <div class="contact-card fade-in">
+        <div class="contact-grid">
+          <div class="glass-card fade-in">
             <h3>Contact Details</h3>
-            <p>
-              If you would like to talk about projects, internships, Cloud, DevOps, or collaboration,
-              feel free to send a message through the form or connect with me directly.
-            </p>
-
-            <div class="contact-links">
-              <a href="mailto:aselsnic@gmail.com">aselsnic@gmail.com</a>
-              <a
-                href="https://www.linkedin.com/in/asel-karunathilaka"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn Profile
-              </a>
-              <a
-                href="https://github.com/AselKarunathilaka"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub Profile
-              </a>
-            </div>
+            <p><strong>Email:</strong> <a href="mailto:aselsnic@gmail.com">aselsnic@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+94764195868">+94 76 419 5868</a></p>
+            <p><strong>Location:</strong> Sri Lanka</p>
           </div>
 
           <form
-            class="contact-form fade-in delay-1"
-            id="contactForm"
+            class="glass-card contact-form fade-in delay-1"
             action="https://formspree.io/f/xgondveo"
             method="POST"
+            id="contactForm"
           >
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required />
-              </div>
+            <h3>Send a Message</h3>
 
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" required />
-              </div>
-            </div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
 
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="Reason for contacting" required />
-            </div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
 
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="Write your message here..."
-                required
-              ></textarea>
-            </div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
 
-            <input type="hidden" name="_subject" value="New portfolio contact message" />
-
-            <button type="submit" class="btn primary submit-btn">Send Message</button>
-            <p class="form-note">
-              I will do my best to respond to all messages within a reasonable timeframe. Thank you for reaching out!
-            </p>
-            <p class="form-status" id="formStatus"></p>
+            <button type="submit" class="btn primary full-width">Send Message</button>
+            <p id="formStatus" class="form-status"></p>
           </form>
         </div>
       </div>
@@ -537,8 +312,36 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-content">
-      <p>© <span id="year"></span> Asel Karunathilaka. Built as a personal portfolio with a Cloud & DevOps focus.</p>
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> Asel Karunathilaka. Built as a Cloud & DevOps learning portfolio.</p>
+
+      <div class="footer-socials">
+        <a
+          href="https://www.linkedin.com/in/asel-karunathilaka"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn Profile"
+          class="social-link"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A2.03 2.03 0 1 0 5.3 7.06 2.03 2.03 0 0 0 5.25 3zM20.44 12.39c0-3.45-1.84-5.05-4.29-5.05-1.98 0-2.86 1.09-3.35 1.86V8.5H9.43c.04.47 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.12-.92.27-.68.88-1.39 1.91-1.39 1.35 0 1.89 1.03 1.89 2.54V20H20.1v-6.9z"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+
+        <a
+          href="https://github.com/AselKarunathilaka"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub Profile"
+          class="social-link"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .5C5.65.5.5 5.65.5 12A11.5 11.5 0 0 0 8.36 22.93c.58.1.79-.25.79-.56v-1.95c-3.2.69-3.88-1.36-3.88-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.72-1.54-2.56-.29-5.26-1.28-5.26-5.71 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.18a10.92 10.92 0 0 1 5.72 0c2.17-1.49 3.13-1.18 3.13-1.18.63 1.58.24 2.75.12 3.04.73.81 1.17 1.84 1.17 3.1 0 4.44-2.7 5.42-5.27 5.7.41.36.78 1.07.78 2.16v3.21c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+      </div>
     </div>
   </footer>
 

@@ -6,8 +6,6 @@ const profileImage = document.getElementById("profileImage");
 const profileFallback = document.getElementById("profileFallback");
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
-const sections = document.querySelectorAll("section[id]");
-const navAnchors = document.querySelectorAll(".nav-links a");
 
 year.textContent = new Date().getFullYear();
 
@@ -26,11 +24,20 @@ menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
-navAnchors.forEach((link) => {
+document.querySelectorAll(".nav-link").forEach((link) => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("active");
   });
 });
+
+if (profileImage) {
+  profileImage.addEventListener("error", () => {
+    profileImage.style.display = "none";
+    if (profileFallback) {
+      profileFallback.style.display = "flex";
+    }
+  });
+}
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -47,47 +54,55 @@ document.querySelectorAll(".fade-in").forEach((element) => {
   observer.observe(element);
 });
 
-function setActiveNav() {
-  let currentSection = "";
+const sections = document.querySelectorAll("section[id]");
+const navItems = document.querySelectorAll(".nav-link");
 
+function updateActiveNav() {
+  let current = "";
   sections.forEach((section) => {
     const sectionTop = section.offsetTop - 140;
-    if (window.scrollY >= sectionTop) {
-      currentSection = section.getAttribute("id");
+    const sectionHeight = section.offsetHeight;
+    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
     }
   });
 
-  navAnchors.forEach((link) => {
+  navItems.forEach((link) => {
     link.classList.remove("active");
-    if (link.getAttribute("href") === `#${currentSection}`) {
+    const href = link.getAttribute("href");
+    if (href === `#${current}`) {
       link.classList.add("active");
     }
   });
 }
 
-window.addEventListener("scroll", setActiveNav);
-window.addEventListener("load", setActiveNav);
-
-if (profileImage) {
-  profileImage.addEventListener("error", () => {
-    profileImage.style.display = "none";
-    profileFallback.style.display = "grid";
-  });
-}
+window.addEventListener("scroll", updateActiveNav);
+window.addEventListener("load", updateActiveNav);
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
-    const endpoint = contactForm.getAttribute("action");
-
-    if (!endpoint || endpoint === "FORM_ENDPOINT") {
-      event.preventDefault();
-      formStatus.textContent =
-        "Please replace FORM_ENDPOINT in index.html with your real form endpoint before using the contact form.";
-      formStatus.style.color = "#f59e0b";
-      return;
-    }
-
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
     formStatus.textContent = "Sending message...";
-    formStatus.style.color = "";
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        formStatus.textContent = "Message sent successfully.";
+        contactForm.reset();
+      } else {
+        formStatus.textContent = "Something went wrong. Please try again.";
+      }
+    } catch (error) {
+      formStatus.textContent = "Network error. Please try again later.";
+    }
   });
 }
